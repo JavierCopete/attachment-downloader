@@ -84,7 +84,7 @@ if __name__ == '__main__':
     (options, args) = parser.parse_args()
 
     if not options.host:
-        parser.error('--host parameter required')
+        parser.error('--hostaaaa parameter required')
     if not options.username:
         parser.error('--username parameter required')
     if not options.download_folder:
@@ -138,6 +138,7 @@ if __name__ == '__main__':
         messages = mail.messages(**filter_options)
 
         for (uid, message) in messages:
+            mail.mark_seen(uid)
             subject = ''
             if hasattr(message, 'subject'):
                 subject = message.subject
